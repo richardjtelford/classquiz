@@ -4,16 +4,16 @@
 \alias{cq_add_results}
 \title{Add results of quiz to quarto document}
 \usage{
-cq_add_results(sheet_url, id = 1)
+cq_add_results(sheet_url, type)
 }
 \arguments{
 \item{sheet_url}{URL to the google sheet containing the results}
-
-\item{id}{id of the form (arbitrary text to distinguish multiple forms).}
 }
 \description{
 Writes observable chunks that add the results of a quiz in google forms to a quarto document.
 }
 \details{
+IMPORTANT: The chunk used to run this function must have the chunk option \verb{#| output: asis}.
+
 Remember to delete the results from the google sheet before class.
 }

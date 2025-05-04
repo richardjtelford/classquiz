@@ -4,10 +4,12 @@
 \alias{cq_ojs_process_data}
 \title{Add ojs chunk to load data}
 \usage{
-cq_ojs_process_data(id)
+cq_ojs_process_data(id, type)
 }
 \arguments{
 \item{id}{The id of the form}
+
+\item{type}{The type of google form question. Currently supported are \code{multiple_choice_grid} and \code{multiple_choice}. Others might work.}
 }
 \description{
 Add ojs chunk to load data

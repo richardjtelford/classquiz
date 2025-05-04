@@ -2,8 +2,9 @@
 
 export(cq_add_form)
 export(cq_add_results)
-export(cq_ojs_barplot)
 export(cq_ojs_load_data)
+export(cq_ojs_multiple_choice_barplot)
+export(cq_ojs_multiple_choice_grid_barplot)
 export(cq_ojs_process_data)
 export(cq_ojs_refresh)
 export(cq_ojs_setup)

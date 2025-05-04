@@ -8,6 +8,20 @@
 \description{
 Facilitates using google forms for classroom quizes and using observable to plot the results.
 }
+\details{
+To use \code{classquiz}, first make a quiz with google forms.
+The following types of questions are supported
+\itemize{
+\item Multiple choice grid
+\item Multiple choice
+}
+
+Each quiz may contain ony one type of question.
+Publish the quiz and find the URL of the google form and the google sheets that contains the answers.
+The main functions to use in classquiz are \code{\link[=cq_add_form]{cq_add_form()}} which makes an iframe showing the quiz, and \code{\link[=cq_add_results]{cq_add_results()}} which adds a plot showing the result.
+Functions with names like \code{cq_ojs_xxx()} make the individual observable chunks.
+They don't need to be used directly, but can be if you want to take their output and modify it.
+}
 \seealso{
 Useful links:
 \itemize{
