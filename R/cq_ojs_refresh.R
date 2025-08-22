@@ -8,9 +8,9 @@
 
 cq_ojs_refresh <- function(id, text = "Refresh") {
   cat(knit_expand(text = "
-  \`\`\`{ojs}
-  //| echo: false
-  viewof refresh_{{id}} = Inputs.button('{{text}}')
-  \`\`\`
-  "))
+\`\`\`{ojs}
+//| echo: false
+viewof refresh_{{id}} = Inputs.button('{{text}}')
+\`\`\`
+"))
 }

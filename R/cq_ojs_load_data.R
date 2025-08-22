@@ -7,13 +7,13 @@
 
 cq_ojs_load_data <- function(sheet_url, id) {
   cat(knit_expand(text = "
-  \`\`\`{ojs}
-  //| echo: false
-  url_{{id}} = '{{sheet_url}}'
-  data_{{id}} = {
-    refresh_{{id}};
-    yield(aq.loadCSV(getCsvUrl(url_{{id}})))
-  }
-  \`\`\`
-  "))
+\`\`\`{ojs}
+//| echo: false
+url_{{id}} = '{{sheet_url}}'
+data_{{id}} = {
+  refresh_{{id}};
+  yield(aq.loadCSV(getCsvUrl(url_{{id}})))
+}
+\`\`\`
+"))
 }

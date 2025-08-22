@@ -41,7 +41,7 @@ cq_add_form(
 
 cq_add_results(
   sheet_url = "https://docs.google.com/spreadsheets/d/1cmX_0HSUDh7Wh9lDE0Fn75d6RkU6mkI15SpdcKh7px4/edit?resourcekey=&gid=86435373#gid=86435373",
-  id = 1
+  type = "multiple_choice"
 )
 ```
 

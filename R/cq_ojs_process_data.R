@@ -27,12 +27,12 @@ cq_ojs_process_data <- function(id, type) {
   )
 
   cat(knit_expand(text = "
-  \`\`\`{ojs}
-  //| echo: false
-  {{domain}}
-  foldData_{{id}} = data_{{id}}
-    .fold(aq.not('Timestamp', 'Score'), { as: ['question', 'answer'] })
-    {{extra}}
-  \`\`\`
-  "))
+\`\`\`{ojs}
+//| echo: false
+{{domain}}
+foldData_{{id}} = data_{{id}}
+  .fold(aq.not('Timestamp', 'Score'), { as: ['question', 'answer'] })
+  {{extra}}
+\`\`\`
+"))
 }

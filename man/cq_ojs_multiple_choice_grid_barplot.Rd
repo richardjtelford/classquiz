@@ -4,14 +4,29 @@
 \alias{cq_ojs_multiple_choice_grid_barplot}
 \title{Add ojs barplot for multiple choice grid form}
 \usage{
-cq_ojs_multiple_choice_grid_barplot(id)
+cq_ojs_multiple_choice_grid_barplot(
+  id,
+  height = "",
+  marginLeft = 100,
+  domain,
+  range
+)
 }
 \arguments{
 \item{id}{The id of the form to be plotted}
+
+\item{height}{The height of the plot.}
+
+\item{marginLeft}{Width of the left margin.}
+
+\item{domain}{Category values in required order.}
+
+\item{range}{Fill colours to use}
 }
 \description{
 Adds an ojs code chunk that generates a barplot suitable for a multiple choice grid google form.
 }
 \details{
-If this plot this code generates is not suitable for your needs, you can modify the code this function produces.
+If this plot this code generates is not suitable for your needs,
+you can modify the code this function produces.
 }

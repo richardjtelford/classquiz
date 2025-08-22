@@ -4,10 +4,15 @@
 \alias{cq_add_results}
 \title{Add results of quiz to quarto document}
 \usage{
-cq_add_results(sheet_url, type)
+cq_add_results(sheet_url, type, ...)
 }
 \arguments{
 \item{sheet_url}{URL to the google sheet containing the results}
+
+\item{type}{Type of question being plotted.}
+
+\item{\dots}{Optional arguments to the plotting function.
+Options are "multiple_choice_grid" and "multiple_choice"}
 }
 \description{
 Writes observable chunks that add the results of a quiz in google forms to a quarto document.
@@ -15,5 +20,12 @@ Writes observable chunks that add the results of a quiz in google forms to a qua
 \details{
 IMPORTANT: The chunk used to run this function must have the chunk option \verb{#| output: asis}.
 
-Remember to delete the results from the google sheet before class.
+Remember to share the google sheet containing the answers.
+
+There must be at least one row of answers or ojs will fail (on todo list)
+
+Remember to delete the answers from the previous year from the google sheet before class. (Could add a temporal filter option).
+}
+\seealso{
+\code{\link[=cq_ojs_multiple_choice_grid_barplot]{cq_ojs_multiple_choice_grid_barplot()}}, \code{\link[=cq_ojs_multiple_choice_barplot]{cq_ojs_multiple_choice_barplot()}}
 }

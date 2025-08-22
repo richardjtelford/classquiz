@@ -16,3 +16,6 @@ URL: https://github.com/richardjtelford/classquiz
 BugReports: https://github.com/richardjtelford/classquiz/issues
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
+Suggests: 
+    rmarkdown
+VignetteBuilder: knitr
