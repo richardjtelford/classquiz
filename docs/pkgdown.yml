@@ -1,0 +1,9 @@
+pandoc: '3.2'
+pkgdown: 2.1.2
+pkgdown_sha: ~
+articles:
+  introduction: introduction.html
+last_built: 2025-08-26T18:50Z
+urls:
+  reference: https://richardjtelford.github.io/classquiz/reference
+  article: https://richardjtelford.github.io/classquiz/articles
