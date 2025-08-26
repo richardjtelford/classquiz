@@ -25,7 +25,7 @@ They don't need to be used directly, but can be if you want to take their output
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/richardjtelford/classquiz}
+  \item \url{https://richardjtelford.github.io/classquiz}
   \item Report bugs at \url{https://github.com/richardjtelford/classquiz/issues}
 }
 

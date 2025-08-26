@@ -19,16 +19,18 @@
 cq_add_results <- function(sheet_url, type, ...) {
   # use option() to set incrementing ID
   if (is.null(getOption("cq_id"))) {
-    id <- 1
+    id <- 1L
     options(cq_id = id)
   } else {
     id <- getOption("cq_id")
-    id <- id + 1
+    id <- id + 1L
     options(cq_id = id)
   }
 
   # setup chunk
-  cq_ojs_setup()
+  if(id == 1L) {
+    cq_ojs_setup()
+  }
 
   # load data chunk
   cq_ojs_load_data(sheet_url = sheet_url, id = id)
