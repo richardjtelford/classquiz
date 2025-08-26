@@ -25,10 +25,10 @@ Small quizes in lectures can help gauge how well the students have understood th
 
 Commercial services exist, for example [Mentimeter](https://www.mentimeter.com). Mentimeter is focused on asking single questions rather than a batch of questions, so isn't ideal for making a quiz.
 
-`classquiz` is designed to use google forms to ask questions, google sheets to store the responses, [observable](https://observablehq.com/) to download the results from google sheets, process and plot them in the lecture slides.
+`classquiz` is designed to use google forms to ask questions, google sheets to store the responses, [observable](https://observablehq.com/) to download the results from google sheets, process and plot them in lecture slides which have been rendered with [quarto](quarto.org).
 Other services for hosting the forms and results could be used instead.
 
-# Procedure
+# Preparation
 
 1) Make and publish google form.
  The following types of question are supported. 
@@ -37,6 +37,10 @@ Other services for hosting the forms and results could be used instead.
  Only one type of question is allowed per form.
 2) Have google form save results in google sheets.
 3) Share read access to google sheet with anyone who has link.
+4) Remember to delete old responses from the google sheet before class (There must be at least one, possibly blank row or ojs is upset).
+
+# Add questions to quarto document
+
 4) Add question form to quarto with `cq_add_form()`. 
 This function displays the URL provided in an iframe.
 
@@ -47,6 +51,8 @@ cq_add_form(
 )
 ```
 
+
+# Add plot of results to quarto document
 
 5) Add the results of the quiz to quarto with `cq_add_results()`. 
 This function makes a set of observable code chunks that download the data, process it and plot it.
@@ -62,6 +68,8 @@ cq_add_results(
   type = "multiple_choice_grid"
 )
 ```
+
+# Customise appearance of the plots
 
 6) You can customise the appearance of the plots.
 The height can be changed with the `height` argument.

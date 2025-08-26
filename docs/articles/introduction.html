@@ -76,8 +76,8 @@
 </div>
 <p>Small quizes in lectures can help gauge how well the students have understood the material.</p>
 <p>Commercial services exist, for example <a href="https://www.mentimeter.com" class="external-link">Mentimeter</a>. Mentimeter is focused on asking single questions rather than a batch of questions, so isn’t ideal for making a quiz.</p>
-<p><code>classquiz</code> is designed to use google forms to ask questions, google sheets to store the responses, <a href="https://observablehq.com/" class="external-link">observable</a> to download the results from google sheets, process and plot them in the lecture slides. Other services for hosting the forms and results could be used instead.</p>
-</section><section class="section level2"><h2 id="procedure">Procedure<a class="anchor" aria-label="anchor" href="#procedure"></a>
+<p><code>classquiz</code> is designed to use google forms to ask questions, google sheets to store the responses, <a href="https://observablehq.com/" class="external-link">observable</a> to download the results from google sheets, process and plot them in lecture slides which have been rendered with <a href="quarto.org">quarto</a>. Other services for hosting the forms and results could be used instead.</p>
+</section><section class="section level2"><h2 id="preparation">Preparation<a class="anchor" aria-label="anchor" href="#preparation"></a>
 </h2>
 <ol type="1">
 <li>Make and publish google form. The following types of question are supported.</li>
@@ -89,6 +89,10 @@
 <ol start="2" type="1">
 <li>Have google form save results in google sheets.</li>
 <li>Share read access to google sheet with anyone who has link.</li>
+<li>Remember to delete old responses from the google sheet before class (There must be at least one, possibly blank row or ojs is upset).</li>
+</ol></section><section class="section level2"><h2 id="add-questions-to-quarto-document">Add questions to quarto document<a class="anchor" aria-label="anchor" href="#add-questions-to-quarto-document"></a>
+</h2>
+<ol start="4" type="1">
 <li>Add question form to quarto with <code><a href="../reference/cq_add_form.html">cq_add_form()</a></code>. This function displays the URL provided in an iframe.</li>
 </ol>
 <div class="cell">
@@ -100,6 +104,8 @@
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeLIUnzdTfBUqjr_X0MvF7JBDQgy_mndeZVsjgW4JR3tFRHSw/viewform?usp=sharing&amp;ouid=107915462972182704713" width="672" height="600px" data-external="1">
 </iframe>
 </div>
+</section><section class="section level2"><h2 id="add-plot-of-results-to-quarto-document">Add plot of results to quarto document<a class="anchor" aria-label="anchor" href="#add-plot-of-results-to-quarto-document"></a>
+</h2>
 <ol start="5" type="1">
 <li>Add the results of the quiz to quarto with <code><a href="../reference/cq_add_results.html">cq_add_results()</a></code>. This function makes a set of observable code chunks that download the data, process it and plot it. You need to use the <code>type</code> argument to give the type of question. Only “multiple_choice_grid” is currently properly supported. You must use the <code>#| output: asis</code> code block option so that the generated observable chunks are correctly interpreted.</li>
 </ol>
@@ -212,6 +218,8 @@
 </div>
 </div>
 </div>
+</section><section class="section level2"><h2 id="customise-appearance-of-the-plots">Customise appearance of the plots<a class="anchor" aria-label="anchor" href="#customise-appearance-of-the-plots"></a>
+</h2>
 <ol start="6" type="1">
 <li>You can customise the appearance of the plots. The height can be changed with the <code>height</code> argument. Unless the question text is very short, you will need to increase the <code>leftMargin</code>. <code>domain</code> gives the possible responses, and <code>range</code> specifies the colours to be used.</li>
 </ol>
