@@ -1,0 +1,6 @@
+title: "Introduction to classquiz"
+description: "A brief introduction to using classquiz."
+author: "Richard Telford"
+url: https://richardjtelford.github.io/classquiz
+template:
+  bootstrap: 5

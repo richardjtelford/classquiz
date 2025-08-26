@@ -12,10 +12,11 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     knitr
-URL: https://github.com/richardjtelford/classquiz
+URL: https://richardjtelford.github.io/classquiz
 BugReports: https://github.com/richardjtelford/classquiz/issues
 RoxygenNote: 7.3.2
 Roxygen: list(markdown = TRUE)
 Suggests: 
-    rmarkdown
-VignetteBuilder: knitr
+    quarto
+VignetteBuilder: 
+    quarto

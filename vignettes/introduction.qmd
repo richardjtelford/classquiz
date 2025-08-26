@@ -1,0 +1,85 @@
+---
+title: "Introduction"
+vignette: >
+  %\VignetteIndexEntry{Introduction}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+# Why
+
+```{r setup}
+library(classquiz)
+```
+
+Small quizes in lectures can help gauge how well the students have understood the material.
+
+Commercial services exist, for example [Mentimeter](https://www.mentimeter.com). Mentimeter is focused on asking single questions rather than a batch of questions, so isn't ideal for making a quiz.
+
+`classquiz` is designed to use google forms to ask questions, google sheets to store the responses, [observable](https://observablehq.com/) to download the results from google sheets, process and plot them in the lecture slides.
+Other services for hosting the forms and results could be used instead.
+
+# Procedure
+
+1) Make and publish google form.
+ The following types of question are supported. 
+  - multiple-choice grid (one per form)
+  - multiple-choice (several questions per form if they have the same set of answers)
+ Only one type of question is allowed per form.
+2) Have google form save results in google sheets.
+3) Share read access to google sheet with anyone who has link.
+4) Add question form to quarto with `cq_add_form()`. 
+This function displays the URL provided in an iframe.
+
+```{r}
+#| echo: fenced
+cq_add_form(
+  form_url = "https://docs.google.com/forms/d/e/1FAIpQLSeLIUnzdTfBUqjr_X0MvF7JBDQgy_mndeZVsjgW4JR3tFRHSw/viewform?usp=sharing&ouid=107915462972182704713"
+)
+```
+
+
+5) Add the results of the quiz to quarto with `cq_add_results()`. 
+This function makes a set of observable code chunks that download the data, process it and plot it.
+You need to use the `type` argument to give the type of question. 
+Only "multiple_choice_grid" is currently properly supported.
+You must use the `#| output: asis` code block option so that the generated observable chunks are correctly interpreted.
+
+```{r}
+#| echo: fenced
+#| output: asis
+cq_add_results(
+  sheet_url = "https://docs.google.com/spreadsheets/d/1v3jF5jzbd4bpsmf1x-cZpX1NmL4FAsR0tGIh-a5I_RU/edit?resourcekey=&gid=24040024#gid=24040024", 
+  type = "multiple_choice_grid"
+)
+```
+
+6) You can customise the appearance of the plots.
+The height can be changed with the `height` argument.
+Unless the question text is very short, you will need to increase the `leftMargin`.
+`domain` gives the possible responses, and `range` specifies the colours to be used. 
+
+
+```{r}
+#| echo: fenced
+#| output: asis
+
+cq_add_results(
+  sheet_url = "https://docs.google.com/spreadsheets/d/1v3jF5jzbd4bpsmf1x-cZpX1NmL4FAsR0tGIh-a5I_RU/edit?resourcekey=&gid=24040024#gid=24040024", 
+  type = "multiple_choice_grid", 
+  height = 500, 
+  marginLeft = 170,
+  domain = c("Yes", "No"),
+  range = c("green", "orange")
+)
+```
+
