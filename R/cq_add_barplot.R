@@ -19,9 +19,13 @@ cq_ojs_multiple_choice_grid_barplot <- function(id, height = "", marginLeft = 10
   }
   if(!missing(domain)){
     domain <- paste0("domain: [\"", paste(domain, collapse = "\", \""), "\"]")
+  } else {
+    domain <- ""
   }
   if(!missing(range)){
     range <- paste0("range: [\"", paste(range, collapse = "\", \""), "\"],")
+  } else {
+    range <- ""
   }
 
 
