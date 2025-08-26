@@ -18,7 +18,7 @@ cq_ojs_multiple_choice_grid_barplot <- function(id, height = "", marginLeft = 10
     height <- paste0("height: ", height, ",\n")
   }
   if(!missing(domain)){
-    domain <- paste0("domain: [\"", paste(domain, collapse = "\", \""), "\"]")
+    domain <- paste0("domain: [\"", paste(domain, collapse = "\", \""), "\"],")
   } else {
     domain <- ""
   }
@@ -40,7 +40,7 @@ Plot.plot({
   y: {label: null, domain: cnames_{{id}}},
   color: {
     legend: true,
-    {{domain}},
+    {{domain}}
     {{range}}
   },
   style: {fontSize: '25px'},
